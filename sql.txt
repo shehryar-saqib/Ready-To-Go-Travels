@@ -1,0 +1,91 @@
+CREATE TABLE packages (
+    packageId int,
+    image varchar(400),
+    name varchar(255),
+    description varchar(400),
+    route varchar(255)
+);
+
+INSERT INTO packages (packageId, image, name,description,route) VALUES (1,'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Neeulm_Valley_AJK_%28Arang_Kel%29.jpg/640px-Neeulm_Valley_AJK_%28Arang_Kel%29.jpg', 'Kashmir','It hosts numerous freshwater streams, green forests, lush green mountains, and a blue river.','kashmir');
+INSERT INTO packages (packageId, image, name,description,route) VALUES (2,'https://fairymeadowscottage.com/images/fairymeadowscottages.jpg','Fairy Meadows','Fairy Meadows is a beautiful grassland near  Nanga Parbat that attracts tourists.','fairymeadows');
+INSERT INTO packages (packageId, image, name,description,route) VALUES (3,'https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2019/11/cover-image-13.jpg','Murree','Murree is a popular hill station,for its pleasant weather, since forever','murree');
+INSERT INTO packages (packageId, image, name,description,route) VALUES (4,'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/f3/a1/36.jpg','Naran','Naran is famous as a tourist destination, owing to its lush greenland and mountains.','naran');
+INSERT INTO packages (packageId, image, name,description,route) VALUES (5,'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/f3/a1/36.jpg','Shogran','It is a wonderful hill station at the height of 2340 meters, with amazing beauty.','shogran');
+INSERT INTO packages (packageId, image, name,description,route) VALUES (6,'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/67/88/93/swat-valley.jpg?w=700&h=-1&s=1','Swat','This beautiful land is also known as the "City of Valleys" with a history of Old Buddism.','swat');
+
+
+
+CREATE TABLE team (
+    teamId int,
+    image varchar(400),
+    name varchar(255),
+    role varchar(400),
+);
+
+INSERT INTO team (teamId, image, name, role) VALUES (1,,'Shehryar Saqib','Head of the Tour');
+INSERT INTO team (teamId, image, name, role) VALUES (2,,'Maaz Ahmed','Chief Operations Officer');
+INSERT INTO team (teamId, image, name, role) VALUES (3,,'Aiza Islam','Chief Financial Officer');
+INSERT INTO team (teamId, image, name, role) VALUES (4,,'Uswa Fatima','First Aid Team Head');
+
+
+
+CREATE TABLE team (
+    teamId int,
+    image LONGBLOB,
+    name varchar(255),
+    role varchar(400)
+);
+
+INSERT INTO team (teamId, image, name, role) VALUES (1,LOAD_FILE('C:/Users/cw/new/public/assets/img/team/shehryar.jpg'),'Shehryar Saqib','Head of the Tour');
+INSERT INTO team (teamId, image, name, role) VALUES (2,LOAD_FILE('C:/Users/cw/new/public/assets/img/team/maaz1.jpeg'),'Maaz Ahmed','Chief Operations Officer');
+
+INSERT INTO team (teamId, image, name, role) VALUES (3,LOAD_FILE('C:/Users/cw/new/public/assets/img/team/aiza.jpeg'),'Aiza Islam','Chief Financial Officer');
+
+INSERT INTO team (teamId, image, name, role) VALUES (4,LOAD_FILE('C:/Users/cw/new/public/assets/img/team/uswa.jpeg'),'Uswa Fatima','First Aid Team Head');
+
+
+CREATE TABLE usertrips (
+	id int,
+	firstname varchar(255),
+	lastname varchar(255),
+	cnic int(255),
+	phoneno int(255),
+	email varchar(255),
+	age int(30),
+	adults int,
+	children int,
+    dest varchar(255),
+    price int(255),
+    d_date date,
+    r_date date,
+	is_customized boolean,
+	PRIMAY KEY (id)
+
+);
+
+
+
+
+CREATE TABLE assets(
+    dest varchar(255),
+    image LONGBLOB
+);
+
+INSERT INTO assets (dest,image) VALUES ('Kashmir',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/Kashmir.jfif'));
+INSERT INTO assets (dest,image) VALUES ('Shogran',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/shogran.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Swat',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/swat.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Fairy Meadows',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/fairymeadows.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Murree',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/murree.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Naran',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/naran.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Panjpeer Rocks',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/panjpeer.jpg'));
+INSERT INTO assets (dest,image) VALUES ('Kumrat',LOAD_FILE('C:/Users/cw/new/public/assets/img/packages/kumrat.jpg'));
+
+CREATE TABLE reviews(
+	id int AUTO_INCREMENT,
+    name varchar(255),
+description varchar(255),
+	date date,
+    PRIMARY KEY (id)
+);
+
+
